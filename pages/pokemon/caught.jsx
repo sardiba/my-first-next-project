@@ -28,8 +28,7 @@ const Caught = () => {
                 pokeHeight={pokemon.height}
                 pokeMoves={pokemon.moves}
                 handleCatchPoke={() => null}
-                // pokeHeight={pokemon.height}
-                // pokeAbility={pokemon.abilities}
+                pokeAbility={pokemon.ability}
                 // pokeExp={pokemon.base_experience}
               />
             ))}

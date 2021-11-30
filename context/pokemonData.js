@@ -49,7 +49,7 @@ export function PokemonProvider({ children }) {
     myFetch();
   }, []);
 
-  console.log("Pokemon data");
+  // console.log("Pokemon data");
 
   return (
     <PokemonContext.Provider value={[myPokemon, setMyPokemon]}>

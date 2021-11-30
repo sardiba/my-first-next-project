@@ -40,26 +40,30 @@ export default function Home({ details }) {
         <title>Catch Pokemon</title>
       </Head>
       <main>
-        <div>
+        <DivWrapper>
           <FirstHeading> Welcome to Catch Pokemon Game!</FirstHeading>
           <OpeningTextStyle>
             {" "}
             Hi! I'm Catemon and I'm da best Pokemon Catcher
           </OpeningTextStyle>
-          <ProfileWrapper>
-            <ImageStyle
-              src="/images/catemon.jpg"
-              alt="catemon"
-              width={300}
-              height={298}
-            />
-          </ProfileWrapper>
-          <CaughtPage>
+          <ImageStyle
+            src="/images/catemon.jpg"
+            alt="catemon"
+            width={300}
+            height={298}
+          />
+          <AnotherPage>
             Go to the{" "}
             <Link href="/pokemon/caught">
               <a> Caught page </a>
             </Link>
-          </CaughtPage>
+          </AnotherPage>
+          <AnotherPage>
+            see all{" "}
+            <Link href="/pokemon/moves">
+              <a> Pokemon Moves </a>
+            </Link>
+          </AnotherPage>
           <PokeCardWrapper>
             {poke.map((pokemon) => (
               <Card
@@ -70,12 +74,12 @@ export default function Home({ details }) {
                 pokeHeight={pokemon.height}
                 pokeMoves={pokemon.moves}
                 handleCatchPoke={handleCatchPoke}
-                pokeAbility={pokemon.abilities}
+                pokeAbility={pokemon.ability}
                 pokeExp={pokemon.experience}
               />
             ))}
           </PokeCardWrapper>
-        </div>
+        </DivWrapper>
       </main>
     </>
   );
@@ -95,7 +99,7 @@ const OpeningTextStyle = styled.p`
   font-size: 20px;
   text-align: center;
 `;
-const CaughtPage = styled.p`
+const AnotherPage = styled.p`
   background-color: lightyellow;
   padding: 20px;
   text-align: center;
@@ -109,6 +113,8 @@ const PokeCardWrapper = styled.section`
   margin-right: auto;
 `;
 
-const ProfileWrapper = styled.div`
+const DivWrapper = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

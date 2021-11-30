@@ -5,19 +5,10 @@ export const Card = ({
   pokeName,
   pokePic,
   pokeHeight,
-  pokeMoves,
   handleCatchPoke,
   pokeAbility,
   pokeExp,
-  // pokemon,
 }) => {
-  // const {
-  //   name: pokeName,
-  //   height: pokeHeight,
-  //   abilities: pokeAbility,
-  //   base_experience: pokeExp,
-  // } = pokemon;
-  // const { front_default: pokePic } = pokemon.sprites;
   return (
     <>
       <PokeCardStyle>
@@ -25,16 +16,17 @@ export const Card = ({
         <PokePicStyle src={pokePic} alt="poke front pic" />
         <PokeDetailsStyle>
           <ListStyle>Height : {pokeHeight} m</ListStyle>
-          {/* <ListStyle>
+          <ListStyle>
             Abilities :
-            <ul>
+            <PokeAbilityStyle>
               {pokeAbility.map((ability) => (
-                <li>{ability.ability.name}</li>
+                <PokeAbilityListStyle>
+                  {ability.ability.name}
+                </PokeAbilityListStyle>
               ))}
-            </ul>
-          </ListStyle> */}
+            </PokeAbilityStyle>
+          </ListStyle>
           <ListStyle>Experience : {pokeExp}</ListStyle>
-          {/* <ListStyle>Moves: {pokeMoves}</ListStyle> */}
         </PokeDetailsStyle>
         <CatchButton onClick={(event) => handleCatchPoke(pokeId)}>
           Catch!
@@ -48,7 +40,7 @@ const PokeCardStyle = styled.div`
   display: inline-block;
   background-color: #a8cfcf;
   width: 270px;
-  height: 65vh;
+  height: 70vh;
   border: #7a567a solid 5px;
   border-radius: 10px;
   margin: 15px;
@@ -90,4 +82,11 @@ const CatchButton = styled.button`
   border-radius: 5px;
   padding-left: 15px;
   padding-right: 15px;
+`;
+
+const PokeAbilityStyle = styled.ul`
+  padding-left: 0;
+`;
+const PokeAbilityListStyle = styled.li`
+  list-style-type: none;
 `;
